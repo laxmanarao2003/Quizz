@@ -60,10 +60,11 @@
 {
     font-size: medium;
 }
-label .form-check-label
+label.form-check-label
 {
     font-size:medium;
     user-select: none;
+    cursor: pointer;
 }
 .user_name
 {
