@@ -15,7 +15,30 @@ let i=1;
         time--;
         none_val.innerHTML="0";
         */
-
+ 
+ function after_load()
+ {
+    document.getElementById("question1").style.display="block";
+    document.getElementById("question2").style.display="none";
+    document.getElementById("question3").style.display="none";
+    document.getElementById("question4").style.display="none";
+    document.getElementById("question5").style.display="none";
+    document.getElementById("question6").style.display="none";
+    document.getElementById("question7").style.display="none";
+    document.getElementById("question8").style.display="none";
+    document.getElementById("question9").style.display="none";
+    document.getElementById("question10").style.display="none";
+    document.getElementById("question11").style.display="none";
+    document.getElementById("question12").style.display="none";
+    document.getElementById("question13").style.display="none";
+    document.getElementById("question14").style.display="none";
+    document.getElementById("question15").style.display="none";
+    document.getElementById("instructions").style.display="none";
+    document.getElementById("result").style.display="none";
+    document.getElementById("profile").style.display="none";
+    document.getElementById("quiz_qns").style.display="none";
+    document.getElementById("result").style.display="none";
+ }
 function start_quiz()
 {
    
