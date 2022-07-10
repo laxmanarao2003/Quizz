@@ -43,34 +43,9 @@
     <script>
         setInterval(selection,1000);
     </script>
-    <script>
-        function func()
-        {
-            document.getElementById("question1").style.display="block";
-            document.getElementById("question2").style.display="none";
-            document.getElementById("question3").style.display="none";
-            document.getElementById("question4").style.display="none";
-            document.getElementById("question5").style.display="none";
-            document.getElementById("question6").style.display="none";
-            document.getElementById("question7").style.display="none";
-            document.getElementById("question8").style.display="none";
-            document.getElementById("question9").style.display="none";
-            document.getElementById("question10").style.display="none";
-            document.getElementById("question11").style.display="none";
-            document.getElementById("question12").style.display="none";
-            document.getElementById("question13").style.display="none";
-            document.getElementById("question14").style.display="none";
-            document.getElementById("question15").style.display="none";
-            document.getElementById("instructions").style.display="none";
-            document.getElementById("result").style.display="none";
-            document.getElementById("profile").style.display="none";
-            document.getElementById("quiz_qns").style.display="none";
-            document.getElementById("result").style.display="none";
-        }
-    </script>
-<body onload="func()" class="bg-light"> 
+<body onload="after_load()" class="bg-light"> 
     <!-------------------------- Display at Starting ---------------------->
-    <div class="container-fluid d-flex justify-content-center align-items-center bg_img" id="start">
+    <div class="container-fluid d-flex justify-content-center align-items-center bg_img mh-auto" id="start">
         <div>
             <button class="btn btn-success" onclick="start_quiz()" id="strt_btn1">
                 Start Quiz<span class="" id="btn_span1"></span>
@@ -573,6 +548,31 @@
     </div>
 </div>
 <!------------------------------------ Result ------------------------------->
+     <script>
+        function after_load()
+        {
+            document.getElementById("question1").style.display="block";
+            document.getElementById("question2").style.display="none";
+            document.getElementById("question3").style.display="none";
+            document.getElementById("question4").style.display="none";
+            document.getElementById("question5").style.display="none";
+            document.getElementById("question6").style.display="none";
+            document.getElementById("question7").style.display="none";
+            document.getElementById("question8").style.display="none";
+            document.getElementById("question9").style.display="none";
+            document.getElementById("question10").style.display="none";
+            document.getElementById("question11").style.display="none";
+            document.getElementById("question12").style.display="none";
+            document.getElementById("question13").style.display="none";
+            document.getElementById("question14").style.display="none";
+            document.getElementById("question15").style.display="none";
+            document.getElementById("instructions").style.display="none";
+            document.getElementById("result").style.display="none";
+            document.getElementById("profile").style.display="none";
+            document.getElementById("quiz_qns").style.display="none";
+            document.getElementById("result").style.display="none";
+        }
+    </script>
 
 </body>
 </html>
