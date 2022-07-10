@@ -30,6 +30,10 @@
     line-height: 30px;
     word-spacing: 1px;
 }
+#text_wrap
+{
+    line-height: 30px;   
+}
 .wrap_text_modal
 {
     text-align: justify;
