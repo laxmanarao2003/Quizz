@@ -42,12 +42,12 @@
 }
 .vr_border
 {
-    border-right: 2px solid rgba(0, 0, 0, 0.306);
+    border-right: 1px solid rgba(0, 0, 0, 0.306);
     max-height: auto;
 }
 .hr_border
 {
-    border-left: 2px solid rgba(0, 0, 0, 0.306);
+    border-left: 1px solid rgba(0, 0, 0, 0.306);
     max-height: auto;
 }
 .qtn_nos span
