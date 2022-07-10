@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Quizz
+        </title>
+        <meta name="author" content="Laxmana Rao">
+        <meta name="description" content="Quiz">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="initial-scale-1.0,width=device-width">
+        <meta http-equiv="refresh" content="">
+
+        <!----------------------------- FAVICON --------------------------------->
+        <link rel="icon" href="D:\Projects\quiz\images\favicon_removebg.png" type="image/x-icon">
+
+        <!------------------------------- External CSS -------------------------->
+        <link rel="stylesheet" href="D:\Projects\quiz\styled_quiz.css" type="text/css">
+
+        <!------------------------------- External JS-------------------------->
+        <script src="D:\Projects\quiz\script_quiz.js"></script>
+
+        <!------------------------------- JQUERY-JS-CDN -------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!----------------------------- Fontawesome-JS-CDN -------------------------->
+        <script src="https://kit.fontawesome.com/832f4883ab.js" crossorigin="anonymous"></script>
+
+        <!----------------------------- Typed-JS-CDN ----------------------------->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+        <!---------------------------- Scroll Reveal-JS-CDN ------------------------->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--------------------------- BOOTSTRAP-Css-CDN --------------------------->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- --------------------- BOOTSTRAP-JavaScript-CDN ---------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!------------------------ BOOTSTRAP-JQuery-CDN -------------------------->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    </head>
+    <script>
+        setInterval(selection,1000);
+    </script>
+    <script>
+        function func()
+        {
+            document.getElementById("question1").style.display="block";
+            document.getElementById("question2").style.display="none";
+            document.getElementById("question3").style.display="none";
+            document.getElementById("question4").style.display="none";
+            document.getElementById("question5").style.display="none";
+            document.getElementById("question6").style.display="none";
+            document.getElementById("question7").style.display="none";
+            document.getElementById("question8").style.display="none";
+            document.getElementById("question9").style.display="none";
+            document.getElementById("question10").style.display="none";
+            document.getElementById("question11").style.display="none";
+            document.getElementById("question12").style.display="none";
+            document.getElementById("question13").style.display="none";
+            document.getElementById("question14").style.display="none";
+            document.getElementById("question15").style.display="none";
+            document.getElementById("instructions").style.display="none";
+            document.getElementById("result").style.display="none";
+            document.getElementById("profile").style.display="none";
+            document.getElementById("quiz_qns").style.display="none";
+            document.getElementById("result").style.display="none";
+        }
+    </script>
+<body onload="func()" class="bg-light"> 
+    <!-------------------------- Display at Starting ---------------------->
+    <div class="container-fluid d-flex justify-content-center align-items-center bg_img" id="start">
+        <div>
+            <button class="btn btn-success" onclick="start_quiz()" id="strt_btn1">
+                Start Quiz<span class="" id="btn_span1"></span>
+            </button>
+        </div>
+    </div>
+
+   <!-----------------------------------Instructions------------------------------------>
+    <div class="container-sm container-md container-lg bg-light" id="instructions">
+        <div class="container wrap_text pt-2">
+            <h3 class="text-primary pt-3">Quizz - General Instructions</h3>
+            <p class="pt-3">1. The clock has been set on the server and countdown timer at top right corner of your screen will display the remaining time for you to complete the exam. When the clock runs out the exams ends by default- you are not required to end or submit your exam.</p>
+            <p>2. The questions palette at the right of screen shows one of the following status of each of the questions numbered
+                <div class="">
+                    <p>a.<span class="rounded rounded-circle px-2 py-1 bg-success ms-2 me-2"></span>You have <span>answered</span> the question yet</p>
+                    <p>b.<span class="rounded rounded-circle px-2 py-1 bg-info ms-2 me-2"></span>You have <span>not answered</span> the question yet</p>
+                    <p>c.<span>To deselect a choosen answer,</span>click on the clear response button</p>
+                </div>
+            </p>
+            <p>3. For multiple Type choice question</p>
+                <div class="">
+                    <p>a.To select your answer you click one of the options buttons</p>
+                    <p>b.To change an answer to a question,click the another desired option button</p>
+                </div>
+            <form name="form1" class="col-lg-4 col-md-8">
+                <div class="form-floating mt-4">
+                    <input type="text" id="name" class="form-control" placeholder="Please Enter Your Name..." title="Name contains less than 18 characters" required>
+                    <label for="name">Please Enter Your Full Name</label>
+                </div>
+            </form>
+            <div class="form-check d-flex flex-row mt-3" style="font-weight:normal;">
+                <input type="checkbox" id="check" name="check" class="form-check-input mt-3" required>
+                <label for="check" class="form-check-label ps-3 pt-2" style="word-spacing:1px">I agree to the conditions or instructions</label>
+            </div>
+            <div class="d-flex justify-content-center mt-4 pb-3 mw-auto">
+                <button class="btn btn-primary mt-3" id="strt_btn2" onclick="start_btn1()">
+                    Start Test<span class="" id="btn_span2"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+<!-----------------------------------Instructions------------------------------------>
+
+<div class="container row profile_time" id="profile">
+    <div class="d-flex flex-row">
+        <div class="col d-flex justify-content-start user_name ps-2 pt-3">
+            <div class="h6" id="user_name">Arasavilli LaxmanaRao</div>
+        </div>
+        <div class="col d-flex justify-content-end pt-3" id="timecounter">
+            <span class="h6" id="time_limit"></span>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid row" id="quiz_qns">
+        <!------------------------------------------------------------------>
+        <div class="container-fluid col-md-7 col-lg-9">
+            <div class="hr_border mt-2"><!-----------for Horizontal Border------------->
+                <hr class="border border-dark border-1 mt-2">
+                <div class="container" id="question1">
+                    <h5 class="pt-1">Q.1 of 15</h5>
+                    <div class="pt-3 qtn1">1. .......... was the first person who entered into space ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn1_opt1" name="qtn1" class="form-check-input">
+                        <label for="qtn1_opt1" class="form-check-label">Neil Armstrong</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn1_opt2" name="qtn1" class="form-check-input">
+                        <label for="qtn1_opt2" class="form-check-label">William Lundigan</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn1_opt3" name="qtn1" class="form-check-input">
+                        <label for="qtn1_opt3" class="form-check-label">Yuri Gagarin</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn1_opt4" name="qtn1" class="form-check-input">
+                        <label for="qtn1_opt4" class="form-check-label">Edward McCauley</label>
+                    </div>
+                </div>
+                <div class="container" id="question2">
+                    <h5 class="pt-1">Q.2 of 15</h5>
+                    <div class="pt-3 qtn2">2. Which among the following cities is known for the aircraft industry ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn2_opt1" name="qtn2" class="form-check-input options">
+                        <label for="qtn2_opt1" class="form-check-label">Kolkata</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn2_opt2" name="qtn2" class="form-check-input options">
+                        <label for="qtn2_opt2" class="form-check-label">Sindri</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn2_opt3" name="qtn2" class="form-check-input options">
+                        <label for="qtn2_opt3" class="form-check-label">Bengaluru</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn2_opt4" name="qtn2" class="form-check-input options">
+                        <label for="qtn2_opt4" class="form-check-label">Bhilai</label>
+                    </div>
+                </div>
+                <div class="container" id="question3">
+                    <h5 class="pt-1">Q.3 of 15</h5>
+                    <div class="pt-3 qtn3">3. In which of the following years, India did participate in Olympic Games first time ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn3_opt1" name="qtn3" class="form-check-input">
+                        <label for="qtn3_opt1" class="form-check-label">1896</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn3_opt2" name="qtn3" class="form-check-input">
+                        <label for="qtn3_opt2" class="form-check-label">1907</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn3_opt3" name="qtn3" class="form-check-input">
+                        <label for="qtn3_opt3" class="form-check-label">1920</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn3_opt4" name="qtn3" class="form-check-input">
+                        <label for="qtn3_opt4" class="form-check-label">1900</label>
+                    </div>
+                </div>
+                <div class="container" id="question4">
+                    <h5 class="pt-1">Q.4 of 15</h5>
+                    <div class="pt-3 qtn4">4. ..........is the first Indian woman who climbed the Mt. Everest ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn4_opt1" name="qtn4" class="form-check-input">
+                        <label for="qtn4_opt1" class="form-check-label"> Arunima Sinha</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn4_opt2" name="qtn4" class="form-check-input">
+                        <label for="qtn4_opt2" class="form-check-label">Bachendri Pal</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn4_opt3" name="qtn4" class="form-check-input">
+                        <label for="qtn4_opt3" class="form-check-label">Edmund Hillary</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn4_opt4" name="qtn4" class="form-check-input">
+                        <label for="qtn4_opt4" class="form-check-label">Kami Rita Sherpa</label>
+                    </div>
+                </div>
+                <div class="container" id="question5">
+                    <h5 class="pt-1">Q.5 of 15</h5>
+                    <div class="pt-3 qtn5">5. Which among the following stadiums is known for indoor games ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn5_opt1" name="qtn5" class="form-check-input">
+                        <label for="qtn5_opt1" class="form-check-label">Melbourne Stadium</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn5_opt2" name="qtn5" class="form-check-input">
+                        <label for="qtn5_opt2" class="form-check-label">Ambedkar Stadium</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn5_opt3" name="qtn5" class="form-check-input">
+                        <label for="qtn5_opt3" class="form-check-label">Jawaharlal Nehru Stadium</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn5_opt4" name="qtn5" class="form-check-input">
+                        <label for="qtn5_opt4" class="form-check-label">Shivaji Stadium</label>
+                    </div>
+                </div>
+                <div class="container" id="question6">
+                    <h5 class="pt-1">Q.6 of 15</h5>
+                    <div class="pt-3 qtn6">6. Which among the following is the largest National Park in the world ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn6_opt1" name="qtn6" class="form-check-input">
+                        <label for="qtn6_opt1" class="form-check-label">Mudumu National Park</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn6_opt2" name="qtn6" class="form-check-input">
+                        <label for="qtn6_opt2" class="form-check-label">Northeast Greenland National Park</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn6_opt3" name="qtn6" class="form-check-input">
+                        <label for="qtn6_opt3" class="form-check-label">Zambezi National Park</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn6_opt4" name="qtn6" class="form-check-input">
+                        <label for="qtn6_opt4" class="form-check-label">Jawaharlal Nehru</label>
+                    </div>
+                </div>
+                <div class="container" id="question7">
+                    <h5 class="pt-1">Q.7 of 15</h5>
+                    <div class="pt-3 qtn7">7. The playing area of Horse Riding is known as... ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn7_opt1" name="qtn7" class="form-check-input">
+                        <label for="qtn7_opt1" class="form-check-label">Field</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn7_opt2" name="qtn7" class="form-check-input">
+                        <label for="qtn7_opt2" class="form-check-label">Arena</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn7_opt3" name="qtn7" class="form-check-input">
+                        <label for="qtn7_opt3" class="form-check-label">Ring</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn7_opt4" name="qtn7" class="form-check-input">
+                        <label for="qtn7_opt4" class="form-check-label">Course</label>
+                    </div>
+                </div>
+                <div class="container" id="question8">
+                    <h5 class="pt-1">Q.8 of 15</h5>
+                    <div class="pt-3 qtn8">8. Which among the following is the biggest ocean ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn8_opt1" name="qtn8" class="form-check-input">
+                        <label for="qtn8_opt1" class="form-check-label">Pacific</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn8_opt2" name="qtn8" class="form-check-input">
+                        <label for="qtn8_opt2" class="form-check-label">Indian</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn8_opt3" name="qtn8" class="form-check-input">
+                        <label for="qtn8_opt3" class="form-check-label">Atlantic</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn8_opt4" name="qtn8" class="form-check-input">
+                        <label for="qtn8_opt4" class="form-check-label">Arctic</label>
+                    </div>
+                </div>
+                <div class="container" id="question9">
+                    <h5 class="pt-1">Q.9 of 15</h5>
+                    <div class="pt-3 qtn9">9. The Capital city of Australia ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn9_opt1" name="qtn9" class="form-check-input">
+                        <label for="qtn9_opt1" class="form-check-label">Sideny</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn9_opt2" name="qtn9" class="form-check-input">
+                        <label for="qtn9_opt2" class="form-check-label">Kaabul</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn9_opt3" name="qtn9" class="form-check-input">
+                        <label for="qtn9_opt3" class="form-check-label">Mascow</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn9_opt4" name="qtn9" class="form-check-input">
+                        <label for="qtn9_opt4" class="form-check-label">Abu dubai</label>
+                    </div>
+                </div>
+                <div class="container" id="question10">
+                    <h5 class="pt-1">Q.10 of 15</h5>
+                    <div class="pt-3 qtn10">10. Who developed Yahoo ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn10_opt1" name="qtn10" class="form-check-input">
+                        <label for="qtn10_opt1" class="form-check-label">Vint Cerf & Robert Kahn</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn10_opt2" name="qtn10" class="form-check-input">
+                        <label for="qtn10_opt2" class="form-check-label">Dennis Ritchie & Ken Thompson</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn10_opt3" name="qtn10" class="form-check-input">
+                        <label for="qtn10_opt3" class="form-check-label">David Filo & Jerry Yang</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn10_opt4" name="qtn10" class="form-check-input">
+                        <label for="qtn10_opt4" class="form-check-label">Steve Case & Jeff Bezos</label>
+                    </div>
+                </div>
+                <div class="container" id="question11">
+                    <h5 class="pt-1">Q.11 of 15</h5>
+                    <div class="pt-3 qtn11">11. Which city is known as 'Electronic City of India' ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn11_opt1" name="qtn11" class="form-check-input">
+                        <label for="qtn11_opt1" class="form-check-label">Hyderabad</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn11_opt2" name="qtn11" class="form-check-input">
+                        <label for="qtn11_opt2" class="form-check-label">Bangalore</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn11_opt3" name="qtn11" class="form-check-input">
+                        <label for="qtn11_opt3" class="form-check-label">Mumbai</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn11_opt4" name="qtn11" class="form-check-input">
+                        <label for="qtn11_opt4" class="form-check-label">Guragon</label>
+                    </div>
+                </div>
+                <div class="container" id="question12">
+                    <h5 class="pt-1">Q.12 of 15</h5>
+                    <div class="pt-3 qtn12">12. What Galileo invented ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn12_opt1" name="qtn12" class="form-check-input">
+                        <label for="qtn12_opt1" class="form-check-label">Barometer</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn12_opt2" name="qtn12" class="form-check-input">
+                        <label for="qtn12_opt2" class="form-check-label">Microscope</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn12_opt3" name="qtn12" class="form-check-input">
+                        <label for="qtn12_opt3" class="form-check-label">Thermometer</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn12_opt4" name="qtn12" class="form-check-input">
+                        <label for="qtn12_opt4" class="form-check-label">Pendulum clock</label>
+                    </div>
+                </div>
+                <div class="container" id="question13">
+                    <h5 class="pt-1">Q.13 of 15</h5>
+                    <div class="pt-3 qtn13">13. Who is the first Indian woman to win an Asian Games gold in 400m run ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn13_opt1" name="qtn13" class="form-check-input">
+                        <label for="qtn13_opt1" class="form-check-label">M.L.Valsamma</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn13_opt2" name="qtn13" class="form-check-input">
+                        <label for="qtn13_opt2" class="form-check-label">P.T.Usha</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn13_opt3" name="qtn13" class="form-check-input">
+                        <label for="qtn13_opt3" class="form-check-label">Kamaljit Sandhu</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn13_opt4" name="qtn13" class="form-check-input">
+                        <label for="qtn13_opt4" class="form-check-label">K.Malleshwari</label>
+                    </div>
+                </div>
+                <div class="container" id="question14">
+                    <h5 class="pt-1">Q.14 of 15</h5>
+                    <div class="pt-3 qtn14">14. Who becomes first-ever batsman to score twin hundreds in his first Test as opener ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn14_opt1" name="qtn14" class="form-check-input">
+                        <label for="qtn14_opt1" class="form-check-label">Rohit sharma</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn14_opt2" name="qtn14" class="form-check-input">
+                        <label for="qtn14_opt2" class="form-check-label">virat kohli</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn14_opt3" name="qtn14" class="form-check-input">
+                        <label for="qtn14_opt3" class="form-check-label">sachin tendulkar</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn14_opt4" name="qtn14" class="form-check-input">
+                        <label for="qtn14_opt4" class="form-check-label">kapil dev</label>
+                    </div>
+                </div>
+                <div class="container" id="question15">
+                    <h5 class="pt-1">Q.15 of 15</h5>
+                    <div class="pt-3 qtn15">15. Against which side did Rohit Sharma open the innings in an ODI for the first time ?</div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn15_opt1" name="qtn15" class="form-check-input">
+                        <label for="qtn15_opt1" class="form-check-label">West Indies</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn15_opt2" name="qtn15" class="form-check-input">
+                        <label for="qtn15_opt2" class="form-check-label">Australia</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn15_opt3" name="qtn15" class="form-check-input">
+                        <label for="qtn15_opt3" class="form-check-label">Sri Lanka</label>
+                    </div>
+                    <div class="form-check mt-4">
+                        <input type="radio" id="qtn15_opt4" name="qtn15" class="form-check-input">
+                        <label for="qtn15_opt4" class="form-check-label">South Africa</label>
+                    </div>
+                </div>
+                <div class="d-flex flex-row align-items-end justify-content-end pb-3" style="height: 225px;">
+                    <button class="btn btn-outline-success me-4" onclick="prev()" id="prevbtn"><i class="fa-solid fa-angle-left pe-2"></i>Prev</button>
+                    <button class="btn btn-outline-success me-4" onclick="next()" id="nextbtn">Next<i class="fa-solid fa-angle-right ps-2"></i></button>
+                    <a href="#submitmodal" class="btn btn-primary" id="submitbtn" data-bs-toggle="modal">Submit</a>
+                </div>
+            </div><!-----------for Horizontal Border------------->
+    </div>
+    <div class="col-md-5 col-lg-3 mt-1 qtn_nos">
+        <hr class="border border-1 border-dark mt-1 mw-auto">
+        <div class="row mt-5">
+            <div class="d-flex justify-content-between mt-2">
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark row1_one" onclick="one()">1</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark row1_two" onclick="two()">2</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark row1_three" onclick="three()">3</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark row1_four" onclick="four()">4</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark row1_five" onclick="five()">5</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-between">
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row2_six" onclick="six()">6</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row2_seven" onclick="seven()">7</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row2_eight" onclick="eight()">8</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row2_nine" onclick="nine()">9</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row2_ten" onclick="ten()">10</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-between">
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row3_eleven" onclick="eleven()">11</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row3_twelve" onclick="twelve()">12</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row3_thirteen" onclick="thirteen()">13</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row3_fourteen" onclick="fourteen()">14</span>
+                <span class="rounded rounded-circle px-3 py-2 bg-info text-dark mt-4 row3_fifteen" onclick="fifteen()">15</span>
+            </div>
+        </div>
+        <div class="d-flex flex-row align-items-end mt-5 ms-2" style="text-align:justify;">
+            <div class="pe-5 d-flex flex-row"><span class="rounded rounded-circle px-2 py-1 bg-success me-2"></span>Answered</div>
+            <div class=""><span class="rounded rounded-circle px-2 py-1 bg-info me-2"></span>Not Answered</div>
+        </div>
+        <div class="d-flex flex-row mb-4 ms-2">
+            <div class="mt-5 me-5 mb-4"><a href="#modalinstructions" class="btn btn-outline-dark" data-bs-toggle="modal">Instructions</a></div>
+            <div class="mt-5 mb-4"><button class="btn btn-outline-dark" onclick="clear_t()">Clear<i class="fa-solid fa-trash ps-2"></i></button></div>
+        </div>
+    </div>
+</div>
+    <!------------------------------modal Instructions------------------------------------>
+    <div class="modal fade mw-auto" id="modalinstructions">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Instructions</h5>
+                    <button class="btn btn-danger btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body bg-light container-fluid">
+                        <ol class="wrap_text_modal">
+                            <h3 class="text-primary">General Instructions</h3>
+                            <li>The clock has been set on the server and countdown timer at top right corner of your screen will display the remaining time for you to complete the exam. When the clock runs out the exams ends by default- you are not required to end or submit your exam.</li>
+                            <li>The questions palette at the right of screen shows one of the following status of each of the questions numbered
+                                <ol type="i">
+                                    <li><span class="rounded rounded-circle px-2 py-1 bg-success ms-1 me-2"></span>You have <span>not visited</span> the question yet</li>
+                                    <li><span class="rounded rounded-circle px-2 py-1 bg-info ms-1 me-2"></span>You have <span>not answered</span> the question</li>
+                                    <li><span>To deselect a choosen answer,</span>click on the clear response button</li>
+                                </ol>
+                            <li>For multiple Type choice question</li>
+                            <ol type="a">
+                                <li>To select your answer you click one of the options buttons</li>
+                                <li>To change Your answer,click the another desired option button</li>
+                            </ol>
+                        </ol>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------modal Instructions------------------------------------>
+
+    <div class="modal fade" id="submitmodal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn btn-danger btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-center pb-4">Submit Quiz</h4>
+                    <h6 class="text-center" style="letter-spacing: 1px;">when You are Ready, Click Submit Button</h6>
+                    <div class="btn-group btn-group-vertical d-flex justify-content-center">
+                        <button class="btn btn-success mt-4 mb-3" onclick="submit1()" data-bs-dismiss="modal" id="submit1_btn">
+                        Submit<span class="" id="submit_span"></span>
+                        </button>
+                        <button class="btn btn-light mb-3" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!------------------------------------ Result ------------------------------->
+<div class="container mt-4" id="result">
+    <div class="h2 pb-5">Bootstrap Quiz - 
+        <span id="result_time"></span>
+        <span>Report</span>
+    </div>
+    <div class="border border-2 rounded mw-auto">
+        <div class="justify-content-center ps-4">
+            <div class="pt-3">
+                <h4>Your Score<i class="fa-solid fa-crown ps-2 text-warning"></i></h4>
+                <h2 class="pt-3" id="scored"></h2>
+                <h6 class="pt-3"><span id="percentage1" class="pe-1  h3"></span><i class="fa-regular fa-circle-dot ps-2 pe-2 text-primary h5"></i>accuracy</h6>
+            </div>
+            <div class="mt-5">
+                    <div class="d-flex flex-column">
+                        <h5 class="">Total time spent -<span class="ps-2" id="res_time"></span></h5><br>
+                        <h5 class="pt-2">Total marks - 20</h5>
+                    </div>
+                <div class="row mt-4">
+                    <div class="col d-flex flex-row">
+                        <div class="pe-5 h5">correct</div>
+                        <div class="progress w-50" style="height: 10px;">
+                            <div class="progress progress-bar bg-success" id="progress_percent1" style="width:90%;height: 10px;"></div>
+                        </div>
+                        <div class="ps-5 pe-3"><span id="percentage2" class="h5"></span></div>
+                    </div>
+                </div>
+                <div class="row mt-4 pb-5">
+                    <div class="col d-flex flex-row">
+                        <div class="pe-5" style="font-weight:bold ;">Incorrect</div>
+                        <div class="progress w-50" style="height: 10px;">
+                            <div class="progress progress-bar bg-success" id="progress_percent2" style="width:10%;height: 10px;"></div>
+                        </div>
+                        <div class="ps-5 pe-3 h5"><span id="loss_percent" class="h5"></span></div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-center mw-auto mt-3 pb-3">
+                    <a href="" class="btn btn-primary">Restart</a>
+                    <button class="btn btn-primary ms-5" onclick="window.print()">Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------ Result ------------------------------->
+
+</body>
+</html>

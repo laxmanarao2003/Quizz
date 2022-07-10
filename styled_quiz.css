@@ -1,0 +1,100 @@
+.bg_img
+{
+    background-image: url('https://cdn.cbeditz.com/cbeditz/large/116144210481jxj3qip3lbnq6azoksnchx8d3yfehabm3nk19fpx4ll4nxp52g5ukyyko6lrdgtyvk5z7hwxwg5lsx3cwu1ft3wxaogk8pv4vpx.jpg');
+    min-height: 880px;
+}
+::-webkit-scrollbar 
+{
+    width:5px;
+}
+::-webkit-scrollbar-track 
+{
+    background: #fff; 
+}
+::-webkit-scrollbar-thumb 
+{
+    background: rgba(190, 18, 18, 0.776); 
+    border-radius: 3px;
+}          
+::-webkit-scrollbar-thumb:hover 
+{
+    background: rgba(0, 0, 0, 0.767); 
+}
+#btn
+{
+    font-size: medium;
+}
+.wrap_text
+{
+    text-align: justify;
+    line-height: 30px;
+    word-spacing: 1px;
+}
+.wrap_text_modal
+{
+    text-align: justify;
+    line-height: 37px;
+    word-spacing: 1px;
+}
+.wrap_text span
+{
+    font-weight: bold;
+}
+.vr_border
+{
+    border-right: 2px solid rgba(0, 0, 0, 0.306);
+    max-height: auto;
+}
+.hr_border
+{
+    border-left: 2px solid rgba(0, 0, 0, 0.306);
+    max-height: auto;
+}
+.qtn_nos span
+{
+    font-size: smaller;
+    cursor: context-menu;
+    position: relative;
+}
+.form-check-input
+{
+    font-size: medium;
+}
+label .form-check-label
+{
+    font-size:medium;
+    user-select: none;
+}
+.user_name
+{
+    font-size:large;
+    letter-spacing: 1px;
+}
+.time_limit
+{
+    font-size:large;
+}
+.qtn1,.qtn2,.qtn3,.qtn4,.qtn5
+{
+    word-spacing:1px;
+    user-select: none;
+    text-align: justify;
+    font-size:large;
+    letter-spacing: 0px;
+}
+.qtn6,.qtn7,.qtn8,.qtn9,.qtn10
+{
+    word-spacing:1px;
+    user-select: none;
+    text-align: justify;
+    font-size:large;
+    letter-spacing: 0px;
+}
+.qtn11,.qtn12,.qtn13,.qtn14,.qtn15
+{
+    word-spacing:1px;
+    user-select: none;
+    text-align: justify;
+    font-size:large;
+    letter-spacing: 0px;
+}
