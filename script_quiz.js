@@ -683,7 +683,7 @@ function submit1()
     let submit1_btn=document.getElementById("submit1_btn");
     submit1_btn.innerHTML="Submitting Process";
     
-    setTimeout(submit2,1000);
+    setTimeout(submit2,2000);
 }
 function submit2()
 {
